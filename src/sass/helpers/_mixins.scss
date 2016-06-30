@@ -1,0 +1,51 @@
+// retina対応
+@mixin sprite-width-retina($sprite) {
+  width: nth($sprite, 5) / 2;
+}
+
+@mixin sprite-height-retina($sprite) {
+  height: nth($sprite, 6) / 2;
+}
+
+@mixin sprite-position-retina($sprite) {
+  $sprite-offset-x: nth($sprite, 3) / 2;
+  $sprite-offset-y: nth($sprite, 4) / 2;
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-size-retina($sprite) {
+  background-size: nth($sprite, 7)/2 nth($sprite, 8)/2;
+}
+
+@mixin sprite-image-retina($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+/// retina対応CSSスプライト
+/// @group helpers
+///
+/// @param {String} $sprite
+///  _sprite.scssで自動生成されたsprite変数
+///
+/// @example scss - Usage
+/// i {
+///   @include sprite($sprite-ball1);
+///   display: block;
+/// }
+///
+/// @example css - CSS Output
+/// i {
+///   background-image: url(/img/sprite.png);
+///   background-position: 0px 0px;
+///   width: 50px;
+///   height: 50px;
+///   display: block;
+/// }
+@mixin sprite-2x($sprite) {
+  @include sprite-image-retina($sprite);
+  @include sprite-size-retina($sprite);
+  @include sprite-position-retina($sprite);
+  @include sprite-width-retina($sprite);
+  @include sprite-height-retina($sprite);
+}

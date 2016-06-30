@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/main.css">
+    <script type="text/javascript" src="./js/main.js"></script>
+    <title>ebbie</title>
+</head>
+<body>
+<div class="l-wrapper">
+    <header class="l-header">
+        <h1 class="logo">
+            <a href="/" class="logo__title">ebbie</a>
+        </h1>
+        <nav>
+            <a href="/">Home</a>
+            <a target="_blank" href="/sassdoc/">SassDoc</a>
+        </nav>
+    </header>
+
+    <section class="l-contents">
+        <h1>ebbieについて</h1>
+        <p>
+            ebbie は小規模開発での利用を想定して作ったsass/gulpの集まりです。
+            基本的な指針はありますが、利用する方のプロジェクト毎にカスタマイズして利用する事を想定しています。
+        </p>
+
+        <hr>
+        <h1>ライブラリ</h1>
+        <p>
+            Mixinライブラリとして<a target="_blank" href="http://bourbon.io/">Bourbon</a>を利用しています。
+            グリッドフレームワークとして<a target="_blank" href="http://neat.bourbon.io/">NEAT</a>も使えるようにしていますが、こちらは任意でご利用下さい。<br>
+            ドキュメントとして<a href="http://sassdoc.com/">SassDoc</a>を利用しています。
+        </p>
+        <hr>
+
+        <h1>主なGulpタスク</h1>
+        <ul>
+            <li>$ gulp - SASS(SCSS), HTML, (gulpfile.jsに定義している)JavaScript の変更を検知(SourceMapsの付与, Autoprefixerの適用, JavaScriptの連結)してブラウザに反映</li>
+            <li>$ gulp stylegd - SASS(SCSS) の変更を検知してブラウザに反映</li>
+            <li>$ gulp build - SASS(SCSS) コンパイル, js ファイルの連結, スプライト画像の作成, cssのプロパティ並び替え、MediaQueryを纏める</li>
+            <li>$ gulp release - SASS(SCSS) コンパイル, js ファイルの連結・圧縮, スプライト画像の作成・画像圧縮, cssのプロパティ並び替え、MediaQueryを纏める</li>
+            <li>$ gulp js-concat - js ファイルの連結</li>
+            <li>$ gulp js-uglify - js ファイルの圧縮</li>
+            <li>$ gulp sprite - スプライト画像の作成</li>
+            <li>$ gulp imagemin - 画像ファイルの圧縮</li>
+        </ul>
+        <h2>gulp タスク実行時のサーバー</h2>
+        <ul>
+            <li>http://localhost:3000 - 開発環境</li>
+            <li>http://localhost:3000/sassdoc - SassDoc環境</li>
+        </ul>
+        <hr>
+
+        <h1>コンポーネント作成例</h1>
+        <p>
+            コンポーネント作成に対するルールとして、<a target="_blank" href="http://qiita.com/QUANON/items/c349600b4597e74ef8e6">こちらの記事</a>を
+            参考にさせて頂いてます。
+        </p>
+
+        <h2>コンポーネント</h2>
+        <div class="component">component
+            <div class="component__item">component__item
+                <div class="component__name">component__name</div>
+                <div class="component__desc">component__desc</div>
+            </div>
+        </div>
+
+        <h2>ボタン</h2>
+        <div class="button is-pressed">button pressed</div>
+        <div class="button is-disabled">button disable</div>
+        <div class="button is-skin-a">button skin-a</div>
+        <div class="button is-skin-b">button skin-b</div>
+
+        <h2>スプライト画像</h2>
+        <div>
+            <div class="title--ssb">Normal</div>
+            <img class="sprite-img">
+            <img class="sprite-img--02">
+            <img class="sprite-img--03">
+        </div>
+        <div>
+            <div class="title--ssb">Retina</div>
+            <img class="sprite-img--2x">
+            <img class="sprite-img--2x-02">
+            <img class="sprite-img--2x-03">
+        </div>
+
+        <hr>
+
+        <h1>ディレクトリ構成</h1>
+        <ul>
+            <li>html - dest以下で管理</li>
+            <li>その他のファイル(SASS(SCSS)/js/img) - src以下で管理し、各gulpタスクによってdestへ出力</li>
+        </ul>
+        <pre>
++ dest/                         # 出力ディレクトリ
+  | + css/                      # css
+  |   |-- main.css              # コンパイルしたcssファイル
+  |
+  | + img/                      # 圧縮した画像ファイル
+  |
+  | + js/                       # jsファイル
+  |   |-- main.js               # 結合したjsファイル
+  |
+  | + sassdoc/                  # SassDocドキュメント
+  |
+  + htmlファイル                 # htmlファイル
+  |
++ src/
+  |
+  | + img/                      # 画像ファイル
+  |   + sprite/                 # スプライト用画像ファイル(pngファイル)
+  |
+  | + js/                       # jsファイル
+  |
+  | + sass/                     # SASS(SCSS)ファイル
+  |   + components/             # 共通コンポーネント
+  |     |-- _import.scss        # importファイル
+  |     |-- _xxx.scss           # コンポーネントファイル
+  |     | ...
+  |
+  |   + foundation/             # 変数やhelperを管理するコンポーネント
+  |     |-- _import.scss        # importファイル
+  |     |-- _base.scss          # サイト全体のベースとなるファイル
+  |
+  |   + helpers/                # helperを管理するコンポーネント
+  |     |-- _import.scss        # importファイル
+  |     |-- _functions.scss     # functionsを定義
+  |     |-- _mixins.scss        # mixinを定義
+  |     |-- _placeholders.scss  # placeholdersを定義
+  |
+  |   + layout/                 # ヘッダー、サイドバー、フッターなどのレイアウトを管理するコンポーネント
+  |     |-- _import.scss        # importファイル
+  |     |-- _header.scss        # ヘッダーレイアウト
+  |     |-- _contents.scss      # コンテンツレイアウト
+  |     |-- _footer.scss        # フッターレイアウト
+  |     | ...
+  |
+  |   + utils/                  # 汎用クラスコンポーネント
+  |     |-- _import.scss        # importファイル
+  |     |-- _utility.scss       # 汎用クラスを定義
+  |
+  |   + _pallette.scss          # 全体の色を定義
+  |   + _sprite.scss            # gulpタスクで生成されるSpriteを扱うファイル（自動生成）
+  |   + _variables.scss         # 全体の変数を定義
+  |   + main.scss               # 全てのimport ファイル
+  |
++ .csscomb.json                 # csscomb の設定ファイル
++ .gitignore                    # gitignore
++ gulpfile.js                   # Gulp の定義とタスク
++ LICENSE                       # ライセンスファイル
++ package.json                  # Gulp のメタ情報とプラグイン情報
++ README.md                     # READMEファイル
+        </pre>
+        <hr>
+
+        <h1>Prefixと役割</h1>
+        <dl>
+            <dt>u-* - utility</dt>
+            <dd>paddingやmargin等の汎用クラスを作成して利用します。但し、肥大化するとメンテナンス性が落ちます</dd>
+            <dt>l-* - layout</dt>
+            <dd>ヘッダー、サイドバー、フッターなどのレイアウトを管理します。粒度の大きいコンポーネントなので、作成しなくても構いません</dd>
+            <dt>is-* - state</dt>
+            <dd>JavaScriptなどで状態を変化させる際に利用します</dd>
+        </dl>
+        <hr>
+
+    </section>
+
+</div>
+<footer class="l-footer" id="footer">
+    ebbie
+</footer>
+</body>
+</html>

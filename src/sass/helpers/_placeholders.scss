@@ -1,0 +1,33 @@
+/// デバッグ用に任意の背景をピンクにする
+/// @group helpers
+///
+/// @example scss - Usage
+///   .element {
+///     @extend %debug;
+///   }
+///
+/// @example css - CSS Output
+///   .element {
+///     background-color: pink !important;
+///   }
+%debug {
+  background-color: pink !important;
+}
+
+/// marginとpaddingを0にする
+/// @group helpers
+///
+/// @example scss - Usage
+///   .element {
+///     @extend %no-spaces;
+///   }
+///
+/// @example css - CSS Output
+///   .element {
+///     padding: 0;
+///     margin: 0;
+///   }
+%no-spaces {
+  padding: 0;
+  margin: 0;
+}

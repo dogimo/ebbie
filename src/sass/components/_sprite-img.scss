@@ -1,0 +1,42 @@
+// Sprite Image
+%sprite-img {
+  display: inline-block;
+}
+
+// 非Retina 対応の Sprite Image
+.sprite-img {
+  @extend %sprite-img;
+  @include sprite($icon01);
+}
+.sprite-img--02 {
+  @extend %sprite-img;
+  @include sprite($icon02);
+}
+.sprite-img--03 {
+  @extend %sprite-img;
+  @include sprite($icon03);
+}
+
+// Retina 対応の Sprite Image
+.sprite-img--2x {
+  @extend %sprite-img;
+  @include sprite-2x($icon01-2x);
+}
+.sprite-img--2x-02 {
+  @extend %sprite-img;
+  @include sprite-2x($icon02-2x);
+}
+.sprite-img--2x-03 {
+  @extend %sprite-img;
+  @include sprite-2x($icon03-2x);
+}
+
+.sprite-img--group {
+  @include retina-sprite($icon01-group)
+}
+.sprite-img--group-02 {
+  @include retina-sprite($icon02-group)
+}
+.sprite-img--group-03 {
+  @include retina-sprite($icon03-group)
+}

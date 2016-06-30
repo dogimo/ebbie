@@ -1,0 +1,43 @@
+{
+  "name": "ebbie",
+  "version": "0.1.0",
+  "description": "Simple Frontend Project",
+  "main": "gulpfile.js",
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp build",
+    "release": "gulp release",
+    "js concat": "gulp js-concat",
+    "js uglify": "gulp js-uglify",
+    "sprite image": "gulp sprite",
+    "image uglify": "gulp imagemin"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dogimo/ebbie"
+  },
+  "author": "Ryuji Furuya",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-uglify": "^1.5.1",
+    "gulp-concat": "^2.6.0",
+    "browser-sync": "^2.11.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-csscomb": "^3.0.6",
+    "gulp-csso": "^1.0.1",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-combine-mq": "^0.4.0",
+    "gulp.spritesmith": "^6.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "run-sequence": "^1.1.5",
+    "gulp-notify": "^2.2.0",
+    "sassdoc": "^2.1.19",
+    "gulp-sass": "^2.1.1",
+    "node-neat": "^1.7.2",
+    "del": "^2.2.0",
+    "node-normalize-scss": "^1.2.0"
+  }
+}

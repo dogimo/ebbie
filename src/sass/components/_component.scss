@@ -1,0 +1,33 @@
+// Component
+.component {
+  background-color: $bg-color-b;
+  color: $color-b;
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 10px;
+  %__child {
+    color: $color-b;
+    font-size: 1rem;
+  }
+  &__item {
+    @extend %__child;
+    background-color: $bg-color-c;
+    padding: 6px;
+  }
+  %__kids {
+    background-color: $bg-color-d;
+    padding: 2px;
+  }
+  &__name {
+    @extend %__child;
+    @extend %__kids;
+  }
+  &__desc {
+    @extend %__child;
+    @extend %__kids;
+    &.is-mouseover {
+      color: $color-a;
+      background-color: $bg-color-e;
+    }
+  }
+}

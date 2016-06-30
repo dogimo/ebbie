@@ -1,0 +1,82 @@
+// ==========================================================================
+// Typography
+// ==========================================================================
+/// ベースのfont-family
+/// @type String
+$base-font-family: Avenir , "Open Sans" , "Helvetica Neue" , Helvetica , Arial , Verdana , Roboto , "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" , "Meiryo UI" , "メイリオ" , Meiryo , "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;
+
+
+// ==========================================================================
+// Font size
+// ==========================================================================
+/// ベースのfont-size
+/// @type Number (Unit)
+$base-font-size: 16px;
+/// 小さいサイズのfont-size
+/// @type Number (Unit)
+$small-font-size: 14px;
+/// 大きいサイズのfont-size
+/// @type Number (Unit)
+$large-font-size: 18px;
+
+/// ベースのline-height
+/// @type Number (Unitless)
+$base-line-height: 1.5;
+
+// Other Sizes
+/// ベースのborder-radius
+/// @type Number (Unit)
+$base-border-radius: 3px;
+/// ベースのspaceサイズ
+/// @type Number (Unit)
+$base-spacing: $base-line-height * 1rem;
+/// スモールspaceサイズ
+/// @type Number (Unit)
+$small-spacing: $base-spacing / 2;
+/// ベースのz-index
+/// @type Number (Unitless)
+$base-z-index: 0;
+
+// Animations
+/// ベースのアニメーション一回分の時間
+/// @type Number (Unitless)
+$base-duration: 120ms;
+/// ベースのアニメーションのタイミング・進行割合
+/// @type String
+$base-timing: ease;
+
+// ==========================================================================
+// Width
+// ==========================================================================
+/// 最大横幅
+/// @type Number (Unit)
+$max-width: 1024px;
+/// コンテンツの横幅
+/// @type Number (Unit)
+$contents-width: 960px;
+
+// ==========================================================================
+// グリッドのベースライン
+// ==========================================================================
+/// ベースとなるVertical Rhythmの高さ
+/// @type Number (Unit)
+$base-rhythmic-size: 0.75rem;
+/// ベースとなるmodular-scale-base
+/// @type Number (Unit)
+$modular-scale-base: 1rem;
+/// ベースとなるmodular-scale-ratio
+/// @type Number (Unit)
+$modular-scale-ratio: $augmented-fourth;
+
+// ==========================================================================
+// NEAT variables
+// ==========================================================================
+/// largeサイズのbreak point
+/// @type String
+$lg: new-breakpoint(min-width 1025px 12);
+/// mediumサイズのbreak point
+/// @type String
+$md: new-breakpoint(min-width 641px 8);
+/// smallサイズのbreak point
+/// @type String
+$sm: new-breakpoint(max-width 640px 4);

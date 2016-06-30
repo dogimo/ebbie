@@ -1,0 +1,4 @@
+.l-contents {
+  @include fill-parent;
+  @include pad(rhythmic() default);
+}

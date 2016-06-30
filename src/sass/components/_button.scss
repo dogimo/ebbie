@@ -1,0 +1,46 @@
+// Button
+%button {
+  border-radius: 4px;
+  display: inline-block;
+  background: $bg-color-b;
+  cursor: pointer;
+  box-sizing: border-box;
+  text-align: center;
+  line-height: 2;
+  margin: 0;
+  font-size: inherit;
+  border: 1px solid $bd-color-a;
+  padding: em(5) em(16);
+  text-decoration: none;
+  color: inherit;
+
+  // 状態違いの書き方
+  &.is-pressed {
+    box-shadow: rgba(0, 0, 0, 0.6) 0 2px 4px 0 inset;
+  }
+  &.is-disabled {
+    opacity: 0.5;
+  }
+  // 色違いの書き方
+  &.is-skin-a {
+    background: $bg-color-c;
+  }
+  &.is-skin-b {
+    background: $bg-color-d;
+  }
+}
+// デフォルトボタン
+.button {
+  @extend %button;
+  width: 200px;
+}
+// ロングボタン
+.button--long {
+  @extend %button;
+  width: 480px;
+}
+// フルサイズボタン
+.button--full {
+  @extend %button;
+  width: 100%;
+}

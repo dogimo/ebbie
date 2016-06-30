@@ -1,0 +1,140 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  // default small 14px
+  font-size: $small-font-size;
+  // medium 16px
+  @include media($md) {
+    font-size: $base-font-size;
+  }
+  // large 18px
+  @include media($lg) {
+    font-size: $large-font-size;
+  }
+}
+
+body {
+  color: $color-a;
+  font-family: $base-font-family;
+  line-height: $base-line-height;
+}
+
+// 見出し1
+h1 {
+  font-size: modular-scale(3);
+  line-height: rhythmic(4);
+  margin-top: rhythmic();
+  margin-bottom: rhythmic();
+}
+// 見出し2
+h2 {
+  font-size: modular-scale(2);
+  line-height: rhythmic(3);
+  margin-top: rhythmic();
+  margin-bottom: rhythmic();
+}
+// 見出し3
+h3 {
+  font-size: modular-scale(1);
+  line-height: rhythmic(2);
+  margin-top: rhythmic();
+  margin-bottom: rhythmic();
+}
+// 見出し4
+h4 {
+  font-size: modular-scale(0);
+  line-height: rhythmic(2);
+  margin-top: rhythmic();
+  margin-bottom: rhythmic();
+}
+// 見出し5
+h5 {
+  font-size: modular-scale(-1);
+  line-height: rhythmic();
+  margin-top: rhythmic();
+  margin-bottom: rhythmic();
+}
+// 見出し6
+h6 {
+  font-size: modular-scale(-2);
+  line-height: rhythmic();
+  margin-top: rhythmic();
+  margin-bottom: rhythmic();
+}
+p {
+  margin: 0 0 $small-spacing;
+}
+
+a {
+  color: $link-color-a;
+  text-decoration: none;
+  transition: color $base-duration $base-timing;
+  &:active,
+  &:focus,
+  &:hover {
+    color: shade($link-color-a, 30%);
+  }
+}
+
+hr {
+  border-bottom: 1px solid $bd-color-c;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  margin: $base-spacing 0;
+}
+
+img,
+picture {
+  margin: 0;
+  max-width: 100%;
+}
+
+pre {
+  display: block;
+  padding: 12px;
+  margin: 0 0 $small-spacing;
+  font-size: 12px;
+  line-height: 18px;
+  word-break: break-all;
+  word-wrap: break-word;
+  white-space: pre;
+  background-color: $bg-color-e;
+  border: 1px solid $bd-color-c;
+  border-radius: $base-border-radius;
+}
+
+ul {
+  list-style-type: disc;
+  margin: 0;
+  padding: 0;
+  margin-bottom: rhythmic();
+  padding-left: $base-spacing;
+}
+
+dl {
+  margin: 0 0 rhythmic() 0;
+  > dt {
+    font-weight: 600;
+  }
+  > dd {
+    margin-left: 10px;
+  }
+}
+
+nav {
+  display: inline-block;
+  background-color: $bg-color-a;
+  border-radius: $base-border-radius;
+  color: $color-c;
+  line-height: rhythmic(2);
+  padding: rhythmic() 1rem;
+  margin-bottom: rhythmic();
+  text-decoration: none;
+  @include media($md) {
+    margin-top: rhythmic(3);
+    float: right;
+  }
+}

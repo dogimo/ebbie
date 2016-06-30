@@ -1,0 +1,5 @@
+.l-sidebar {
+  @include media($md) {
+    @include span-columns(3);
+  }
+}

@@ -1,0 +1,8 @@
+// ヘッダーレイアウト
+.l-header {
+  background-color: $bg-color-b;
+  text-align: center;
+  @include fill-parent;
+  @include pad(rhythmic() default);
+  @include clearfix();
+}

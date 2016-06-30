@@ -1,0 +1,66 @@
+/// 最大幅から対象の横幅の割合をパーセントで返す
+///
+/// @group helpers
+///
+/// @param {Number (unit)} $target-width
+///   - 対象となる横幅
+///
+/// @return {Number}
+///   - 横幅の割合
+///
+/// @example scss - Usage
+///
+///   .element {
+///     width: max-width-per(400px);
+///   }
+///
+/// @example css - CSS Output
+@function max-width-per($target-width) {
+  @return percentage( $target-width / $max-width );
+}
+
+/// コンテンツ幅から対象の横幅の割合をパーセントで返す
+///
+/// @group helpers
+///
+/// @param {Number (unit)} $target-width
+///   - 対象となる横幅
+///
+/// @return {Number}
+///   - 横幅の割合
+///
+/// @example scss - Usage
+///
+///   .element {
+///     width: contents-width-per(200px);
+///   }
+///
+/// @example css - CSS Output
+@function contents-width-per($target-width) {
+  @return percentage( $target-width / $contents-width );
+}
+
+/// 行数を掛けた Vertical Rhythm の行数を返します
+///
+/// @group helpers
+///
+/// @param {Number (unit)} $lines
+///   - 行数
+///
+/// @return {Number}
+///   - $base-rhythmic-size に行数をかけた値
+///
+/// @example scss - Usage
+///
+///   .element {
+///     font-size: 16px;
+///     line-height: 1.5rem;
+///     margin-top: rhythmic(2);
+///     margin-bottom: rhythmic();
+///   }
+///
+/// @example css - CSS Output
+@function rhythmic($lines: 1){
+  @return $base-rhythmic-size * $lines;
+}
+

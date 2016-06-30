@@ -1,0 +1,14 @@
+// Logo
+.logo {
+  margin-top: rhythmic();
+  margin-bottom: 0;
+  @include media($md) {
+   float: left;
+  }
+  &__title {
+    color: $color-b;
+    font-weight: 700;
+    font-size: modular-scale(4);
+    line-height: rhythmic(7);
+  }
+}
